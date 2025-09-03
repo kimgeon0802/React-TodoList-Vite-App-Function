@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { removeTodo, toggleTodo } from '@/reducers/todoSlice';
 import './TodoItem.css';
 
-const TodoItem = ({ text, checked, id, onToggle, onRemove }) => {
+const TodoItem = ({ text, checked, id }) => {
   const dispatch = useDispatch();
 
   const handleRemove = useCallback((id) => {
@@ -13,11 +13,12 @@ const TodoItem = ({ text, checked, id, onToggle, onRemove }) => {
   },[dispatch]);
 
   const handleToggle = useCallback((todo) => {
-
-  },[]);
+      todo.checked = !todo.checked;
+      dispatch(toggleTodo(todo))
+  },[dispatch]);
 
   return (
-    <div className="todo-item" onClick={() => onToggle(id)}>
+    <div className="todo-item" onClick={() => handleToggle({ text, checked, id })}>
       <div 
         className="remove" 
         onClick={(e) => {
@@ -39,8 +40,6 @@ TodoItem.propTypes = {
   text: PropTypes.string,
   checked: PropTypes.bool,
   id: PropTypes.number,
-  onToggle: PropTypes.func,
-  onRemove: PropTypes.func
 };
 
 // memo를 사용하여 shouldComponentUpdate 대체
