@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -9,10 +9,10 @@ const FunctionalForm = () => {
   const dispatch = useDispatch();
 
   //이벤트핸들러 함수 선언
-  const handleChange = (e) => {
-    console.log('handleChange =' + e.target.value);
+  const handleChange = useCallback((e) => {
+    //console.log('handleChange =' + e.target.value);
     setTodo(e.target.value);
-  }; //handleChange
+  }, [setTodo]); //handleChange
 
   return (
     <div className="form">

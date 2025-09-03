@@ -1,4 +1,4 @@
-import Form from '@components/Form';
+import Form from '@components/FuntionalForm';
 import TodoItemList from '@components/TodoItemList';
 import TodoListTemplate from '@components/TodoListTemplate';
 
