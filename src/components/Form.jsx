@@ -14,6 +14,10 @@ const Form = () => {
     setTodo(e.target.value);
   }, [setTodo]); //handleChange
 
+  /*
+    useCallback Hook은 함수를 메모이제이션하여 동일한 함수 참조를 유지합니다
+    handleCreate 함수가 useCallback으로 감싸여 있어서 dispatch와 todo가 변경되지 않는 한 동일한 함수참조를 유지합니다.
+  */
   const handleCreate = useCallback(() => {
     console.log('handleCreate');
     const newTodo = {
