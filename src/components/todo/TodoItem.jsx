@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import { removeTodo, toggleTodo } from '../reducers/todosSlice';
+import { removeTodo, toggleTodo } from '../../reducers/todosSlice';
 import './TodoItem.css';
 
 const TodoItem = ({ text, checked, id }) => {

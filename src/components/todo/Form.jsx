@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { addTodo } from '../reducers/todosSlice';
+import { addTodo } from '../../reducers/todosSlice';
 import './Form.css';
 
 const Form = () => {

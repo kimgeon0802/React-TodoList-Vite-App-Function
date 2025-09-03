@@ -1,12 +1,8 @@
-import TodoItemList from './components/TodoItemList';
-import TodoListTemplate from './components/TodoListTemplate';
-import Form from './components/Form';
+import TodoHome from '@components/todo/TodoHome';
 
 const App = () => {
   return (
-    <TodoListTemplate form={ <Form />}>
-      <TodoItemList />
-    </TodoListTemplate>
+    <TodoHome />
   );
 };
 export default App;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { fetchAllTodos } from '../reducers/todosSlice';
+import { fetchAllTodos } from '../../reducers/todosSlice';
 import TodoItem from './TodoItem';
 
 const TodoItemList = () => {
