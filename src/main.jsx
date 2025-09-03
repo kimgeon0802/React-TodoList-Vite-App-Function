@@ -5,17 +5,19 @@ import App from './App.jsx'
 
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
+import { BrowserRouter } from 'react-router-dom';
 import todosSlice from './reducers/todosSlice';
 
 const store = configureStore({
-  // reducer: toDoReducer
   reducer: todosSlice
 });
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
   </StrictMode>,
 )
