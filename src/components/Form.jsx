@@ -14,6 +14,24 @@ const Form = () => {
     setTodo(e.target.value);
   }, [setTodo]); //handleChange
 
+  const handleCreate = useCallback(() => {
+    console.log('handleCreate');
+    const newTodo = {
+      text: todo,
+      checked: false
+    }
+
+
+    setTodo('');
+
+  }, []);
+
+  const handleEnter = (e) => {
+    if (e.keyCode === 13) {
+      handleCreate();
+    }
+  }
+
   return (
     <div className="form">
       <input
