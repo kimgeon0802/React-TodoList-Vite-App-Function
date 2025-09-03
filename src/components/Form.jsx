@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import './Form.css';
 
-const FunctionalForm = () => {
+const Form = () => {
   const [todo, setTodo] = useState('');
   const dispatch = useDispatch();
 
@@ -27,10 +27,10 @@ const FunctionalForm = () => {
   );
 };
 
-FunctionalForm.propTypes = {
+Form.propTypes = {
   myEnter: PropTypes.func,
   myChange: PropTypes.func,
   myCreate: PropTypes.func
 };
 
-export default FunctionalForm;
+export default Form;
