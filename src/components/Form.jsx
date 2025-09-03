@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import { addTodo } from '@/reducers/todoSlice';
 import './Form.css';
 
 const Form = () => {
@@ -20,11 +21,11 @@ const Form = () => {
       text: todo,
       checked: false
     }
-
-
+    //addTodo Action함수호출
+    dispatch(addTodo(newTodo));
     setTodo('');
 
-  }, []);
+  }, [dispatch, todo]);
 
   const handleEnter = (e) => {
     if (e.keyCode === 13) {
@@ -37,8 +38,9 @@ const Form = () => {
       <input
         value={todo}
         onChange={handleChange}
+        onKeyDown={handleEnter}
       />
-      <div className="create-button">
+      <div className="create-button" onClick={handleCreate}>
         추가
       </div>
     </div>
