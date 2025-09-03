@@ -5,7 +5,8 @@ import App from './App.jsx'
 
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-import todosSlice from '@/reducers/todoSlice';
+
+import todosSlice from './reducers/todoSlice';
 
 const store = configureStore({
   reducer: todosSlice
