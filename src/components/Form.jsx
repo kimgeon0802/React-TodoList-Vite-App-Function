@@ -1,6 +1,5 @@
 import { useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
 
 import { addTodo } from '@/reducers/todoSlice';
 import './Form.css';
@@ -45,12 +44,6 @@ const Form = () => {
       </div>
     </div>
   );
-};
-
-Form.propTypes = {
-  myEnter: PropTypes.func,
-  myChange: PropTypes.func,
-  myCreate: PropTypes.func
 };
 
 export default Form;
