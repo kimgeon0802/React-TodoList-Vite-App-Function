@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -8,6 +8,15 @@ import { fetchAllTodos } from '@/reducers/todosSlice';
 const TodoItemList = ({ myToggle, myRemove }) => {
   const myTodos = useSelector((state) => state.todos);
   const dispatch = useDispatch();
+
+  /*
+    action 함수 dispatch 하기
+    useEffect() hook
+    componentDidMount + componentDidUpdate + componentWillUnMount
+  */
+  useEffect(() => {
+    dispatch(fetchAllTodos());
+  },[dispatch]);
 
   const todoList = myTodos.map(
     ({ id, text, checked }) => (
